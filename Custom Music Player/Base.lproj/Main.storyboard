@@ -70,14 +70,14 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="57" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                 <state key="normal" title="Repeat">
-                                                                    <color key="titleColor" red="0.78850433431139888" green="0.37631019166684559" blue="0.19582204640063181" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    <color key="titleColor" red="0.61866985360569959" green="0.39183713204796983" blue="0.33914747902279607" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 </state>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLa-UL-TX3">
                                                                 <rect key="frame" x="99" y="0.0" width="58" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                 <state key="normal" title="Shuffle">
-                                                                    <color key="titleColor" red="0.78850433431139888" green="0.37631019166684559" blue="0.19582204640063181" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    <color key="titleColor" red="0.61866985360569959" green="0.39183713204796983" blue="0.33914747902279607" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 </state>
                                                             </button>
                                                         </subviews>
@@ -93,7 +93,7 @@
                                                                 </connections>
                                                             </slider>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.66668195736839375" green="0.34874497813261951" blue="0.14142547760550186" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="backgroundColor" red="0.82078287174041453" green="0.51984625502996673" blue="0.4499434393861147" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="yrA-bH-Pr0" secondAttribute="trailing" constant="8" id="1S6-Ud-ci6"/>
                                                             <constraint firstItem="yrA-bH-Pr0" firstAttribute="centerY" secondItem="fcn-xr-QhN" secondAttribute="centerY" id="Aj6-rg-98n"/>
@@ -109,7 +109,7 @@
                                                         <rect key="frame" x="66" y="318" width="266" height="31"/>
                                                     </slider>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.94333755969999999" green="0.66303045873517208" blue="0.42187156145073718" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="1" green="0.6551929278267945" blue="0.56900601111302884" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstItem="fcn-xr-QhN" firstAttribute="leading" secondItem="DNp-AB-4WW" secondAttribute="leading" constant="20" id="50W-Vv-VQS"/>
                                                     <constraint firstItem="RH3-Ca-sEF" firstAttribute="centerY" secondItem="DNp-AB-4WW" secondAttribute="centerY" id="56w-gQ-KiZ"/>

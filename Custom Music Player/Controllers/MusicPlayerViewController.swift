@@ -6,7 +6,7 @@ class MusicPlayerViewController: UIViewController {
     //IBOutlet references.
     @IBOutlet weak var audioPositionSlider: UISlider!
     
-    // Audio player instance.
+    // Global audio player instance.
     private var audioPlayer: AVAudioPlayer?
     
     override func viewDidLoad() {
@@ -34,11 +34,6 @@ class MusicPlayerViewController: UIViewController {
             } else {
                 print("Error playing current audio!")
             }
-            
-            // Create an audio session.
-            let audioSession = AVAudioSession.sharedInstance()
-            try audioSession.setCategory(.playback, options: .mixWithOthers)
-            try audioSession.setMode(.default)
         } catch {
             print(error)
         }
