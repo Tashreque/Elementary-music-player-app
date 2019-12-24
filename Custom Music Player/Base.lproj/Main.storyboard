@@ -114,7 +114,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.94333755969999999" green="0.66303045869999999" blue="0.42187156149999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="OaH-sm-muq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="GM3-si-K2F"/>
                             <constraint firstItem="OaH-sm-muq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Kbq-AY-kiu"/>
