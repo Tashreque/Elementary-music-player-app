@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		181FC5A123B0D50D0048ABAB /* Nemesis - Kobe (Official).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 181FC5A023B0D50C0048ABAB /* Nemesis - Kobe (Official).mp3 */; };
+		1851D02123B1DAE100D6FEDD /* Nemesis - Kobe (Official).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1851D02023B1DAE100D6FEDD /* Nemesis - Kobe (Official).mp3 */; };
 		18A5E62B23B0BE3500D33692 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A5E62A23B0BE3500D33692 /* AppDelegate.swift */; };
 		18A5E62D23B0BE3500D33692 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A5E62C23B0BE3500D33692 /* SceneDelegate.swift */; };
 		18A5E62F23B0BE3500D33692 /* MusicPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A5E62E23B0BE3500D33692 /* MusicPlayerViewController.swift */; };
@@ -17,7 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		181FC5A023B0D50C0048ABAB /* Nemesis - Kobe (Official).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Nemesis - Kobe (Official).mp3"; sourceTree = "<group>"; };
+		1851D01723B1CD5B00D6FEDD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1851D02023B1DAE100D6FEDD /* Nemesis - Kobe (Official).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Nemesis - Kobe (Official).mp3"; sourceTree = "<group>"; };
 		18A5E62723B0BE3500D33692 /* Custom Music Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Custom Music Player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A5E62A23B0BE3500D33692 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18A5E62C23B0BE3500D33692 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,11 +40,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1851D01623B1CD5A00D6FEDD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1851D01723B1CD5B00D6FEDD /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1851D01F23B1DAC700D6FEDD /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				1851D02023B1DAE100D6FEDD /* Nemesis - Kobe (Official).mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		18A5E61E23B0BE3500D33692 = {
 			isa = PBXGroup;
 			children = (
 				18A5E62923B0BE3500D33692 /* Custom Music Player */,
 				18A5E62823B0BE3500D33692 /* Products */,
+				1851D01623B1CD5A00D6FEDD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +76,7 @@
 		18A5E62923B0BE3500D33692 /* Custom Music Player */ = {
 			isa = PBXGroup;
 			children = (
+				1851D01F23B1DAC700D6FEDD /* Sounds */,
 				18A5E64123B0CE8100D33692 /* Model */,
 				18A5E64023B0CE7100D33692 /* View-Models */,
 				18A5E63F23B0CE6B00D33692 /* Views */,
@@ -66,7 +85,6 @@
 				18A5E62C23B0BE3500D33692 /* SceneDelegate.swift */,
 				18A5E63023B0BE3500D33692 /* Main.storyboard */,
 				18A5E63323B0BE3600D33692 /* Assets.xcassets */,
-				181FC5A023B0D50C0048ABAB /* Nemesis - Kobe (Official).mp3 */,
 				18A5E63523B0BE3600D33692 /* LaunchScreen.storyboard */,
 				18A5E63823B0BE3600D33692 /* Info.plist */,
 			);
@@ -163,7 +181,7 @@
 				18A5E63723B0BE3600D33692 /* LaunchScreen.storyboard in Resources */,
 				18A5E63423B0BE3600D33692 /* Assets.xcassets in Resources */,
 				18A5E63223B0BE3500D33692 /* Main.storyboard in Resources */,
-				181FC5A123B0D50D0048ABAB /* Nemesis - Kobe (Official).mp3 in Resources */,
+				1851D02123B1DAE100D6FEDD /* Nemesis - Kobe (Official).mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
