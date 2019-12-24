@@ -3,16 +3,17 @@ import AVFoundation
 
 class MusicPlayerViewController: UIViewController {
 
-    // Audio player instance.
-    var audioPlayer: AVAudioPlayer?
+    //IBOutlet references.
+    @IBOutlet weak var audioPositionSlider: UISlider!
     
-    // Play/pause control status variables.
-    var playing = false
+    // Audio player instance.
+    private var audioPlayer: AVAudioPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         configureMusicPlayer()
+        
     }
     
     func configureMusicPlayer() {
@@ -27,7 +28,14 @@ class MusicPlayerViewController: UIViewController {
         
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: filePathUrl! )
-            audioPlayer?.prepareToPlay()
+            if let audioPlayer = audioPlayer {
+                audioPositionSlider.maximumValue = Float(audioPlayer.duration)
+                audioPlayer.prepareToPlay()
+            } else {
+                print("Error playing current audio!")
+            }
+            
+            // Create an audio session.
             let audioSession = AVAudioSession.sharedInstance()
             try audioSession.setCategory(.playback, options: .mixWithOthers)
             try audioSession.setMode(.default)
@@ -36,17 +44,46 @@ class MusicPlayerViewController: UIViewController {
         }
     }
     
+    @objc func updateSlider() {
+        /* Called after a certain time interval to update the
+           slider in real time. */
+        if let audioPlayer = audioPlayer {
+            audioPositionSlider.value = Float(audioPlayer.currentTime)
+        } else {
+            print("Unable to update slider in real time!")
+        }
+    }
+    
+    @IBAction func audioPositionSliderDragged(_ sender: UISlider) {
+        // Called when the audio slider gets interacted with.
+        if let audioPlayer = audioPlayer {
+            let currentState = audioPlayer.isPlaying
+            audioPlayer.stop()
+            audioPlayer.currentTime = TimeInterval(audioPositionSlider.value)
+            audioPlayer.prepareToPlay()
+            
+            // Check if already playing.
+            if audioPlayer.isPlaying != currentState {
+                audioPlayer.play()
+            }
+        }
+    }
+    
     @IBAction func playPauseTapped(_ sender: UIButton) {
         // Called when the play pause button gets tapped.
         print("Play/Pause tapped.")
-        if !playing {
-            audioPlayer?.play()
+        if let audioPlayer = audioPlayer {
+            if !audioPlayer.isPlaying {
+                audioPlayer.play()
+                
+                // Handle real time slider update.
+                let _ = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateSlider), userInfo: nil, repeats: true)
+            } else {
+                audioPlayer.pause()
+            }
         } else {
-            audioPlayer?.pause()
+            print("Audio player error during play/pause!")
         }
-
-        // Change playing status.
-        playing = !playing
     }
     
     @IBAction func previousTapped(_ sender: UIButton) {
@@ -62,7 +99,6 @@ class MusicPlayerViewController: UIViewController {
    protocol functions. */
 extension MusicPlayerViewController: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        print("Audio did finish playing!")
     }
 }
 

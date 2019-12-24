@@ -83,13 +83,45 @@
                                                         </subviews>
                                                         <color key="tintColor" red="0.94333755969999999" green="0.50005767840000004" blue="0.21115742609999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </stackView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcn-xr-QhN">
+                                                        <rect key="frame" x="20" y="40" width="358" height="92.5"/>
+                                                        <subviews>
+                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yrA-bH-Pr0">
+                                                                <rect key="frame" x="6" y="31.5" width="346" height="31"/>
+                                                                <connections>
+                                                                    <action selector="audioPositionSliderDragged:" destination="BYZ-38-t0r" eventType="valueChanged" id="9rR-6r-0IR"/>
+                                                                </connections>
+                                                            </slider>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.66668195736839375" green="0.34874497813261951" blue="0.14142547760550186" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="yrA-bH-Pr0" secondAttribute="trailing" constant="8" id="1S6-Ud-ci6"/>
+                                                            <constraint firstItem="yrA-bH-Pr0" firstAttribute="centerY" secondItem="fcn-xr-QhN" secondAttribute="centerY" id="Aj6-rg-98n"/>
+                                                            <constraint firstItem="yrA-bH-Pr0" firstAttribute="leading" secondItem="fcn-xr-QhN" secondAttribute="leading" constant="8" id="OtX-fW-rB9"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <integer key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="BQF-Sk-9ap">
+                                                        <rect key="frame" x="66" y="318" width="266" height="31"/>
+                                                    </slider>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.94333755969999999" green="0.66303045873517208" blue="0.42187156145073718" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
+                                                    <constraint firstItem="fcn-xr-QhN" firstAttribute="leading" secondItem="DNp-AB-4WW" secondAttribute="leading" constant="20" id="50W-Vv-VQS"/>
                                                     <constraint firstItem="RH3-Ca-sEF" firstAttribute="centerY" secondItem="DNp-AB-4WW" secondAttribute="centerY" id="56w-gQ-KiZ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="BQF-Sk-9ap" secondAttribute="trailing" constant="68" id="5yD-Or-eq9"/>
                                                     <constraint firstItem="RH3-Ca-sEF" firstAttribute="centerX" secondItem="DNp-AB-4WW" secondAttribute="centerX" id="Duu-AO-9zL"/>
+                                                    <constraint firstItem="BQF-Sk-9ap" firstAttribute="leading" secondItem="DNp-AB-4WW" secondAttribute="leading" constant="68" id="TR8-Pl-fQC"/>
+                                                    <constraint firstItem="fcn-xr-QhN" firstAttribute="top" secondItem="DNp-AB-4WW" secondAttribute="top" constant="40" id="WFp-18-KkY"/>
+                                                    <constraint firstItem="i64-B2-Iok" firstAttribute="top" secondItem="BQF-Sk-9ap" secondAttribute="bottom" constant="8" id="aOt-WH-Z2W"/>
                                                     <constraint firstItem="i64-B2-Iok" firstAttribute="centerX" secondItem="DNp-AB-4WW" secondAttribute="centerX" id="cOm-H0-Hkl"/>
                                                     <constraint firstAttribute="bottom" secondItem="i64-B2-Iok" secondAttribute="bottom" constant="8" id="cv7-Rc-93H"/>
+                                                    <constraint firstAttribute="trailing" secondItem="fcn-xr-QhN" secondAttribute="trailing" constant="20" id="mEh-eE-lnW"/>
+                                                    <constraint firstItem="RH3-Ca-sEF" firstAttribute="top" secondItem="fcn-xr-QhN" secondAttribute="bottom" constant="40" id="mQ6-N5-0VI"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -123,10 +155,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="audioPositionSlider" destination="yrA-bH-Pr0" id="7Fm-Zb-Umy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-97" y="31"/>
+            <point key="canvasLocation" x="-97.101449275362327" y="30.803571428571427"/>
         </scene>
     </scenes>
 </document>
