@@ -5,12 +5,14 @@ class MusicPlayerViewController: UIViewController {
 
     //IBOutlet references.
     @IBOutlet weak var audioPositionSlider: UISlider!
+    @IBOutlet weak var volumeSlider: UISlider!
     
     // Global audio player instance.
     private var audioPlayer: AVAudioPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
         configureMusicPlayer()
         
@@ -22,14 +24,11 @@ class MusicPlayerViewController: UIViewController {
            player to play the song. */
         let filePathUrl = Bundle.main.url(forResource: "Nemesis - Kobe (Official)", withExtension: "mp3")
         
-        guard filePathUrl != nil else {
-            return
-        }
-        
         do {
-            audioPlayer = try AVAudioPlayer(contentsOf: filePathUrl! )
+            audioPlayer = try AVAudioPlayer(contentsOf: filePathUrl!)
             if let audioPlayer = audioPlayer {
                 audioPositionSlider.maximumValue = Float(audioPlayer.duration)
+                volumeSlider.value = AVAudioSession.sharedInstance().outputVolume
                 audioPlayer.prepareToPlay()
             } else {
                 print("Error playing current audio!")
@@ -39,7 +38,7 @@ class MusicPlayerViewController: UIViewController {
         }
     }
     
-    @objc func updateSlider() {
+    @objc func updatePositionSlider() {
         /* Called after a certain time interval to update the
            slider in real time. */
         if let audioPlayer = audioPlayer {
@@ -61,6 +60,17 @@ class MusicPlayerViewController: UIViewController {
             if audioPlayer.isPlaying != currentState {
                 audioPlayer.play()
             }
+        } else {
+            print("Error during updating track position!")
+        }
+    }
+    
+    @IBAction func volumeSliderDragged(_ sender: UISlider) {
+        // Called when the volume slider gets interacted with.
+        if let audioPlayer = audioPlayer {
+            audioPlayer.volume = volumeSlider.value
+        } else {
+            print("Error updating volume!")
         }
     }
     
@@ -72,7 +82,7 @@ class MusicPlayerViewController: UIViewController {
                 audioPlayer.play()
                 
                 // Handle real time slider update.
-                let _ = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateSlider), userInfo: nil, repeats: true)
+                let _ = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updatePositionSlider), userInfo: nil, repeats: true)
             } else {
                 audioPlayer.pause()
             }

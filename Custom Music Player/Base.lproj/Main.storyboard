@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--Music Player-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MusicPlayerViewController" customModule="Custom_Music_Player" customModuleProvider="target" sceneMemberID="viewController">
@@ -107,6 +107,9 @@
                                                     </view>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="BQF-Sk-9ap">
                                                         <rect key="frame" x="66" y="293.5" width="266" height="31"/>
+                                                        <connections>
+                                                            <action selector="volumeSliderDragged:" destination="BYZ-38-t0r" eventType="valueChanged" id="nIu-CQ-LZo"/>
+                                                        </connections>
                                                     </slider>
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="0.6551929278267945" blue="0.56900601111302884" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -155,9 +158,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="WAV-qM-7AQ"/>
+                    <tabBarItem key="tabBarItem" title="Music Player" id="WAV-qM-7AQ"/>
                     <connections>
                         <outlet property="audioPositionSlider" destination="yrA-bH-Pr0" id="7Fm-Zb-Umy"/>
+                        <outlet property="volumeSlider" destination="BQF-Sk-9ap" id="qh5-LA-3U8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -167,7 +171,7 @@
         <!--My Music-->
         <scene sceneID="zuS-NQ-LUu">
             <objects>
-                <viewController id="LSc-ON-zxC" sceneMemberID="viewController">
+                <viewController id="LSc-ON-zxC" customClass="SongListViewController" customModule="Custom_Music_Player" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1eM-sx-asg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,24 +185,24 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="LlH-fZ-KzE">
-                                                <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongTableViewCell" rowHeight="126" id="LlH-fZ-KzE" customClass="SongTableViewCell" customModule="Custom_Music_Player" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="414" height="126"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LlH-fZ-KzE" id="eTt-Fq-SNi">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="126"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3yg-7C-glx">
-                                                            <rect key="frame" x="16" y="24.5" width="180" height="51.5"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3yg-7C-glx">
+                                                            <rect key="frame" x="16" y="32.5" width="180" height="61"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stairway to heaven" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjm-6S-7Yu">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stairway to heaven" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Gjm-6S-7Yu">
                                                                     <rect key="frame" x="0.0" y="0.0" width="180" height="26.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Led Zeppelin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2r2-Rt-orE">
-                                                                    <rect key="frame" x="0.0" y="34.5" width="88.5" height="17"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2r2-Rt-orE">
+                                                                    <rect key="frame" x="0.0" y="34.5" width="39.5" height="26.5"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                     <color key="textColor" red="0.99686771630000004" green="0.63680320980000005" blue="0.54899358750000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <nil key="highlightedColor"/>
@@ -207,10 +211,14 @@
                                                         </stackView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="3yg-7C-glx" firstAttribute="centerY" secondItem="eTt-Fq-SNi" secondAttribute="centerY" id="FPu-Hb-seJ"/>
-                                                        <constraint firstItem="3yg-7C-glx" firstAttribute="leading" secondItem="eTt-Fq-SNi" secondAttribute="leading" constant="16" id="gSl-Jk-srk"/>
+                                                        <constraint firstItem="3yg-7C-glx" firstAttribute="leading" secondItem="eTt-Fq-SNi" secondAttribute="leadingMargin" id="EMf-DL-03i"/>
+                                                        <constraint firstItem="3yg-7C-glx" firstAttribute="centerY" secondItem="eTt-Fq-SNi" secondAttribute="centerY" id="N4C-o0-Uq7"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="songArtistLabel" destination="2r2-Rt-orE" id="eMv-BR-RTv"/>
+                                                    <outlet property="songNameLabel" destination="Gjm-6S-7Yu" id="PeJ-og-gcj"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <userDefinedRuntimeAttributes>
@@ -218,6 +226,10 @@
                                                 <integer key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="LSc-ON-zxC" id="pyw-4u-gOE"/>
+                                            <outlet property="delegate" destination="LSc-ON-zxC" id="1fJ-77-tRk"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -232,6 +244,9 @@
                         <viewLayoutGuide key="safeArea" id="fAs-US-ewe"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Music" id="neF-Bv-PEN"/>
+                    <connections>
+                        <outlet property="songListTableView" destination="og4-TX-YV4" id="3So-nN-ReG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kmU-Sh-Txh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -243,25 +258,26 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="tsq-bH-hT9" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hhb-qf-RtG">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" red="1" green="0.65519292780000005" blue="0.56900601110000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="GP1-6k-KVd"/>
-                        <segue destination="eoa-Wd-seB" kind="relationship" relationship="viewControllers" id="37n-DY-y2x"/>
+                        <segue destination="eoa-Wd-seB" kind="relationship" relationship="viewControllers" id="cgi-WP-jv8"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="OKK-W7-FGl"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="db8-Rj-yae" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4" y="31"/>
         </scene>
-        <!--Item-->
+        <!--Songs-->
         <scene sceneID="gUR-tP-qIU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eoa-Wd-seB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="f1c-uA-hQR"/>
+                    <tabBarItem key="tabBarItem" title="Songs" id="f1c-uA-hQR"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="COf-b4-6Sl">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
