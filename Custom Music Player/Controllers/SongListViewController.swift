@@ -6,19 +6,9 @@ class SongListViewController: UIViewController {
     @IBOutlet weak var songListTableView: UITableView!
     
     // Song holder.
-    private var songs = [SongDataModel]()
-    
-    // Song name holder.
-    private var songNames = [String]() {
+    private var songs = [SongDataModel]() {
         didSet {
             songListTableView.reloadData()
-        }
-    }
-    
-    // Song extension holder.
-    private var songExtensions = [String]() {
-        didSet {
-            print(songExtensions)
         }
     }
     
@@ -27,9 +17,7 @@ class SongListViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         let controllerHelper = SongListViewControllerHelper()
-        let songUrls = controllerHelper.getCurrentSongUrls()
-        songNames = controllerHelper.getCurrentSongNames(for: songUrls)
-        songExtensions = controllerHelper.getCurrentSongExtensions(for: songUrls)
+        songs = controllerHelper.getSongDataModels()
     }
     
 
@@ -50,13 +38,13 @@ class SongListViewController: UIViewController {
 extension SongListViewController: UITableViewDelegate, UITableViewDataSource {
     // Callback to set the total number of rows.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return songNames.count
+        return songs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Callback to return reusable UITableViewCell.
         let cell = tableView.dequeueReusableCell(withIdentifier: "SongTableViewCell") as! SongTableViewCell
-        cell.songNameLabel.text = songNames[indexPath.row]
+        cell.songNameLabel.text = songs[indexPath.row].songName
         return cell
     }
     

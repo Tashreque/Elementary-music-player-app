@@ -6,7 +6,20 @@ import Foundation
 class SongListViewControllerHelper {
     
     func getSongDataModels() -> [SongDataModel] {
-        return []
+        /* Called to obtain the list of songs where each song
+           is a SongDataModel type object. */
+        let songUrls = getCurrentSongUrls()
+        let songNames = getCurrentSongNames(for: songUrls)
+        let songExtensions = getCurrentSongExtensions(for: songUrls)
+        
+        // Create song model objects and put them in an array.
+        var songDataModels = [SongDataModel]()
+        let totalItems = songUrls.count
+        for i in 0..<totalItems {
+            songDataModels.append(SongDataModel(songUrl: songUrls[i], songName: songNames[i], songExtension: songExtensions[i], songArtist: "Artist", songAlbum: "Album"))
+        }
+        
+        return songDataModels
     }
     
     func getCurrentSongUrls() -> [URL] {
