@@ -21,6 +21,21 @@ class SongListViewController: UIViewController {
         // Do any additional setup after loading the view.
         let controllerHelper = SongListViewControllerHelper()
         songs = controllerHelper.getSongDataModels()
+        
+        initializeAudioPlayer()
+    }
+    
+    func initializeAudioPlayer() {
+        let filePathUrl = songs[currentSongIndex].songUrl
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: filePathUrl)
+            if let audioPlayer = audioPlayer {
+                audioPlayer.prepareToPlay()
+            }
+        } catch {
+            print(error)
+        }
     }
 
     
