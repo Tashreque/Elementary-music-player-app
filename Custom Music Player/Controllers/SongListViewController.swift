@@ -3,6 +3,8 @@ import AVFoundation
 
 // Global AVAudioPlayer instance.
 var audioPlayer: AVAudioPlayer?
+
+// Global list of all songs.
 var allSongs: [SongDataModel]?
 
 class SongListViewController: UIViewController {
@@ -76,8 +78,7 @@ extension SongListViewController: UITableViewDelegate, UITableViewDataSource {
         
         /* Make the music player view controller aware of
            the current song index. */
-        let targetVC = MusicPlayerViewController() 
-        targetVC.currentSongIndex = indexPath.row
+        currentSongIndex = indexPath.row
     }
     
 }

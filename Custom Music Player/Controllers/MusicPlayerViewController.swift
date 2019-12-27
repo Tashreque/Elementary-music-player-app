@@ -1,20 +1,21 @@
 import UIKit
 import AVFoundation
 
+// Global current song index.
+var currentSongIndex = 0
+
 class MusicPlayerViewController: UIViewController {
 
     //IBOutlet references.
     @IBOutlet weak var audioPositionSlider: UISlider!
     @IBOutlet weak var volumeSlider: UISlider!
     
-    // Current song index.
-    var currentSongIndex = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         configureMusicPlayer()
+        print(currentSongIndex)
     }
     
     func configureMusicPlayer() {
@@ -136,17 +137,10 @@ class MusicPlayerViewController: UIViewController {
                 } catch {
                     print(error)
                 }
-                print(allSongs[currentSongIndex].songName)
+                print("Current song: \(allSongs[currentSongIndex].songName)")
             }
         }
     }
     
-}
-
-/* This extension implements the required AVAudioPlayerDelegate
-   protocol functions. */
-extension MusicPlayerViewController: AVAudioPlayerDelegate {
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-    }
 }
 
