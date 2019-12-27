@@ -115,8 +115,8 @@
 		18A5E63E23B0CE5900D33692 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				18A5E62E23B0BE3500D33692 /* MusicPlayerViewController.swift */,
 				187CEB6723B462BE00A5E1B4 /* SongListViewController.swift */,
+				18A5E62E23B0BE3500D33692 /* MusicPlayerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

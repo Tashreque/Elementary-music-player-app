@@ -8,13 +8,13 @@ class MusicPlayerViewController: UIViewController {
     @IBOutlet weak var volumeSlider: UISlider!
     
     // Global audio player instance.
-    private var audioPlayer: AVAudioPlayer?
+    var audioPlayer: AVAudioPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        configureMusicPlayer()
+        //configureMusicPlayer()
         
     }
     
