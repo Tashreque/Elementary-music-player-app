@@ -3,18 +3,20 @@ import AVFoundation
 
 // Global AVAudioPlayer instance.
 var audioPlayer: AVAudioPlayer?
+var allSongs: [SongDataModel]?
 
 class SongListViewController: UIViewController {
-
-    // Song holder.
-    private var songs = [SongDataModel]() {
-        didSet {
-            songListTableView.reloadData()
-        }
-    }
     
     // IBOutlet references.
     @IBOutlet weak var songListTableView: UITableView!
+    
+    // Song holder.
+    private var songs = [SongDataModel]() {
+        didSet {
+            allSongs = songs
+            songListTableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +73,11 @@ extension SongListViewController: UITableViewDelegate, UITableViewDataSource {
         } catch {
             print(error)
         }
+        
+        /* Make the music player view controller aware of
+           the current song index. */
+        let targetVC = MusicPlayerViewController() 
+        targetVC.currentSongIndex = indexPath.row
     }
     
 }

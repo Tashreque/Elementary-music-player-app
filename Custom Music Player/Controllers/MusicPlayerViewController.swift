@@ -7,6 +7,9 @@ class MusicPlayerViewController: UIViewController {
     @IBOutlet weak var audioPositionSlider: UISlider!
     @IBOutlet weak var volumeSlider: UISlider!
     
+    // Current song index.
+    var currentSongIndex = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -80,10 +83,56 @@ class MusicPlayerViewController: UIViewController {
     }
     
     @IBAction func previousTapped(_ sender: UIButton) {
-        
+        // Called to go back one track.
+        if let allSongs = allSongs {
+            if !allSongs.isEmpty {
+                currentSongIndex -= 1
+                if currentSongIndex < 0 {
+                    currentSongIndex = 0
+                }
+                
+                // Start playing new track.
+                let filePathUrl = allSongs[currentSongIndex].songUrl
+                
+                do {
+                    audioPlayer = try AVAudioPlayer(contentsOf: filePathUrl)
+                    if let audioPlayer = audioPlayer {
+                        audioPlayer.prepareToPlay()
+                        audioPlayer.play()
+                    }
+                } catch {
+                    print(error)
+                }
+                print(allSongs[currentSongIndex].songName)
+            }
+        }
     }
     
     @IBAction func nextTapped(_ sender: UIButton) {
+        // called to skip current track.
+        if let allSongs = allSongs {
+            let maxIndex = allSongs.count - 1
+            if !allSongs.isEmpty {
+                currentSongIndex += 1
+                if currentSongIndex > maxIndex {
+                    currentSongIndex = 0
+                }
+                
+                // Start playing new track.
+                let filePathUrl = allSongs[currentSongIndex].songUrl
+                
+                do {
+                    audioPlayer = try AVAudioPlayer(contentsOf: filePathUrl)
+                    if let audioPlayer = audioPlayer {
+                        audioPlayer.prepareToPlay()
+                        audioPlayer.play()
+                    }
+                } catch {
+                    print(error)
+                }
+                print(allSongs[currentSongIndex].songName)
+            }
+        }
     }
     
 }
