@@ -94,16 +94,19 @@ class MusicPlayerViewController: UIViewController {
                 // Start playing new track.
                 let filePathUrl = allSongs[currentSongIndex].songUrl
                 
+                // Go to previous song.
                 do {
                     audioPlayer = try AVAudioPlayer(contentsOf: filePathUrl)
                     if let audioPlayer = audioPlayer {
-                        audioPlayer.prepareToPlay()
-                        audioPlayer.play()
+                        if audioPlayer.isPlaying {
+                            audioPlayer.prepareToPlay()
+                            audioPlayer.play()
+                        }
                     }
                 } catch {
                     print(error)
                 }
-                print(allSongs[currentSongIndex].songName)
+                print("Current song: \(allSongs[currentSongIndex].songName)")
             }
         }
     }
@@ -121,11 +124,14 @@ class MusicPlayerViewController: UIViewController {
                 // Start playing new track.
                 let filePathUrl = allSongs[currentSongIndex].songUrl
                 
+                // Go to next song.
                 do {
                     audioPlayer = try AVAudioPlayer(contentsOf: filePathUrl)
                     if let audioPlayer = audioPlayer {
-                        audioPlayer.prepareToPlay()
-                        audioPlayer.play()
+                        if audioPlayer.isPlaying {
+                            audioPlayer.prepareToPlay()
+                            audioPlayer.play()
+                        }
                     }
                 } catch {
                     print(error)
