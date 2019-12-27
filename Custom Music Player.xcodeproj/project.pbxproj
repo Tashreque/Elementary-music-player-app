@@ -11,6 +11,7 @@
 		181823CC23B48ED700102AF6 /* Nemesis - Kobe (Official)2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 181823CA23B48ED700102AF6 /* Nemesis - Kobe (Official)2.mp3 */; };
 		181823CE23B4AF2000102AF6 /* SongDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181823CD23B4AF2000102AF6 /* SongDataModel.swift */; };
 		1851D02123B1DAE100D6FEDD /* Nemesis - Kobe (Official).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1851D02023B1DAE100D6FEDD /* Nemesis - Kobe (Official).mp3 */; };
+		1858D46E23B607E200938481 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858D46D23B607E200938481 /* GlobalVariables.swift */; };
 		187CEB6823B462BE00A5E1B4 /* SongListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187CEB6723B462BE00A5E1B4 /* SongListViewController.swift */; };
 		187CEB6C23B4636900A5E1B4 /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187CEB6B23B4636900A5E1B4 /* SongTableViewCell.swift */; };
 		187CEB6E23B47E9200A5E1B4 /* SongListViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187CEB6D23B47E9200A5E1B4 /* SongListViewControllerHelper.swift */; };
@@ -29,6 +30,7 @@
 		181823CD23B4AF2000102AF6 /* SongDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDataModel.swift; sourceTree = "<group>"; };
 		1851D01723B1CD5B00D6FEDD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1851D02023B1DAE100D6FEDD /* Nemesis - Kobe (Official).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Nemesis - Kobe (Official).mp3"; sourceTree = "<group>"; };
+		1858D46D23B607E200938481 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
 		187CEB6723B462BE00A5E1B4 /* SongListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListViewController.swift; sourceTree = "<group>"; };
 		187CEB6B23B4636900A5E1B4 /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
 		187CEB6D23B47E9200A5E1B4 /* SongListViewControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListViewControllerHelper.swift; sourceTree = "<group>"; };
@@ -76,6 +78,14 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
+		1858D46C23B607C300938481 /* Global variables */ = {
+			isa = PBXGroup;
+			children = (
+				1858D46D23B607E200938481 /* GlobalVariables.swift */,
+			);
+			path = "Global variables";
+			sourceTree = "<group>";
+		};
 		18A5E61E23B0BE3500D33692 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +107,7 @@
 		18A5E62923B0BE3500D33692 /* Custom Music Player */ = {
 			isa = PBXGroup;
 			children = (
+				1858D46C23B607C300938481 /* Global variables */,
 				1851D01F23B1DAC700D6FEDD /* Sounds */,
 				18A5E64123B0CE8100D33692 /* Model */,
 				18A5E64023B0CE7100D33692 /* View-Models */,
@@ -274,6 +285,7 @@
 			files = (
 				18A5E62F23B0BE3500D33692 /* MusicPlayerViewController.swift in Sources */,
 				187CEB6E23B47E9200A5E1B4 /* SongListViewControllerHelper.swift in Sources */,
+				1858D46E23B607E200938481 /* GlobalVariables.swift in Sources */,
 				181823CE23B4AF2000102AF6 /* SongDataModel.swift in Sources */,
 				187CEB6823B462BE00A5E1B4 /* SongListViewController.swift in Sources */,
 				187CEB6C23B4636900A5E1B4 /* SongTableViewCell.swift in Sources */,

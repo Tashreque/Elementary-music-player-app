@@ -1,12 +1,7 @@
 import UIKit
 import AVFoundation
 
-// Global AVAudioPlayer instance.
-var audioPlayer: AVAudioPlayer?
-
-// Global list of all songs.
-var allSongs: [SongDataModel]?
-
+// This class accounts for the list of songs that can be played.
 class SongListViewController: UIViewController {
     
     // IBOutlet references.

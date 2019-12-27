@@ -1,14 +1,13 @@
 import UIKit
 import AVFoundation
 
-// Global current song index.
-var currentSongIndex = 0
-
+// This class accounts for the Music player view.
 class MusicPlayerViewController: UIViewController {
 
     //IBOutlet references.
     @IBOutlet weak var audioPositionSlider: UISlider!
     @IBOutlet weak var volumeSlider: UISlider!
+    @IBOutlet weak var currentSongLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +30,8 @@ class MusicPlayerViewController: UIViewController {
         } else {
             print("Error playing current audio!")
         }
+        
+        currentSongLabel.text = allSongs[currentSongIndex].songName
     }
     
     @objc func updatePositionSlider() {
@@ -85,61 +86,59 @@ class MusicPlayerViewController: UIViewController {
     
     @IBAction func previousTapped(_ sender: UIButton) {
         // Called to go back one track.
-        if let allSongs = allSongs {
-            if !allSongs.isEmpty {
-                currentSongIndex -= 1
-                if currentSongIndex < 0 {
-                    currentSongIndex = 0
-                }
-                
-                // Start playing new track.
-                let filePathUrl = allSongs[currentSongIndex].songUrl
-                
-                // Go to previous song.
-                do {
-                    audioPlayer = try AVAudioPlayer(contentsOf: filePathUrl)
-                    if let audioPlayer = audioPlayer {
-                        if audioPlayer.isPlaying {
-                            audioPlayer.prepareToPlay()
-                            audioPlayer.play()
-                        }
-                    }
-                } catch {
-                    print(error)
-                }
-                print("Current song: \(allSongs[currentSongIndex].songName)")
+        if !allSongs.isEmpty {
+            currentSongIndex -= 1
+            if currentSongIndex < 0 {
+                currentSongIndex = 0
             }
+            
+            // Start playing new track.
+            let filePathUrl = allSongs[currentSongIndex].songUrl
+            
+            // Go to previous song.
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: filePathUrl)
+                if let audioPlayer = audioPlayer {
+                    audioPlayer.prepareToPlay()
+                    audioPlayer.play()
+                }
+            } catch {
+                print(error)
+            }
+            print("Current song: \(allSongs[currentSongIndex].songName)")
         }
+        
+        // Update current song label text.
+        currentSongLabel.text = allSongs[currentSongIndex].songName
     }
     
     @IBAction func nextTapped(_ sender: UIButton) {
         // called to skip current track.
-        if let allSongs = allSongs {
-            let maxIndex = allSongs.count - 1
-            if !allSongs.isEmpty {
-                currentSongIndex += 1
-                if currentSongIndex > maxIndex {
-                    currentSongIndex = 0
-                }
-                
-                // Start playing new track.
-                let filePathUrl = allSongs[currentSongIndex].songUrl
-                
-                // Go to next song.
-                do {
-                    audioPlayer = try AVAudioPlayer(contentsOf: filePathUrl)
-                    if let audioPlayer = audioPlayer {
-                        if audioPlayer.isPlaying {
-                            audioPlayer.prepareToPlay()
-                            audioPlayer.play()
-                        }
-                    }
-                } catch {
-                    print(error)
-                }
-                print("Current song: \(allSongs[currentSongIndex].songName)")
+        let maxIndex = allSongs.count - 1
+        if !allSongs.isEmpty {
+            currentSongIndex += 1
+            if currentSongIndex > maxIndex {
+                currentSongIndex = 0
             }
+            
+            // Start playing new track.
+            let filePathUrl = allSongs[currentSongIndex].songUrl
+            
+            // Go to next song.
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: filePathUrl)
+                if let audioPlayer = audioPlayer {
+                    audioPlayer.prepareToPlay()
+                    audioPlayer.play()
+                }
+            } catch {
+                print(error)
+            }
+            print("Current song: \(allSongs[currentSongIndex].songName)")
         }
+        
+        // Update current song label text.
+        currentSongLabel.text = allSongs[currentSongIndex].songName
     }
     
 }

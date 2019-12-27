@@ -70,14 +70,14 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="57" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                 <state key="normal" title="Repeat">
-                                                                    <color key="titleColor" red="0.61866985360569959" green="0.39183713204796983" blue="0.33914747902279607" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLa-UL-TX3">
                                                                 <rect key="frame" x="99" y="0.0" width="58" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                 <state key="normal" title="Shuffle">
-                                                                    <color key="titleColor" red="0.61866985360569959" green="0.39183713204796983" blue="0.33914747902279607" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                             </button>
                                                         </subviews>
@@ -111,6 +111,12 @@
                                                             <action selector="volumeSliderDragged:" destination="BYZ-38-t0r" eventType="valueChanged" id="nIu-CQ-LZo"/>
                                                         </connections>
                                                     </slider>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current song" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1G4-eC-80r">
+                                                        <rect key="frame" x="143.5" y="262" width="111.5" height="23"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                        <color key="textColor" red="0.65317274410000004" green="0.34609430070000002" blue="0.33029665470000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="0.6551929278267945" blue="0.56900601111302884" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
@@ -118,6 +124,8 @@
                                                     <constraint firstItem="RH3-Ca-sEF" firstAttribute="centerY" secondItem="DNp-AB-4WW" secondAttribute="centerY" id="56w-gQ-KiZ"/>
                                                     <constraint firstAttribute="trailing" secondItem="BQF-Sk-9ap" secondAttribute="trailing" constant="68" id="5yD-Or-eq9"/>
                                                     <constraint firstItem="RH3-Ca-sEF" firstAttribute="centerX" secondItem="DNp-AB-4WW" secondAttribute="centerX" id="Duu-AO-9zL"/>
+                                                    <constraint firstItem="1G4-eC-80r" firstAttribute="centerX" secondItem="DNp-AB-4WW" secondAttribute="centerX" id="F2e-qa-DLd"/>
+                                                    <constraint firstItem="BQF-Sk-9ap" firstAttribute="top" secondItem="1G4-eC-80r" secondAttribute="bottom" constant="8.5" id="OsY-Lb-cFN"/>
                                                     <constraint firstItem="BQF-Sk-9ap" firstAttribute="leading" secondItem="DNp-AB-4WW" secondAttribute="leading" constant="68" id="TR8-Pl-fQC"/>
                                                     <constraint firstItem="fcn-xr-QhN" firstAttribute="top" secondItem="DNp-AB-4WW" secondAttribute="top" constant="40" id="WFp-18-KkY"/>
                                                     <constraint firstItem="i64-B2-Iok" firstAttribute="top" secondItem="BQF-Sk-9ap" secondAttribute="bottom" constant="8" id="aOt-WH-Z2W"/>
@@ -161,6 +169,7 @@
                     <tabBarItem key="tabBarItem" title="Music Player" id="WAV-qM-7AQ"/>
                     <connections>
                         <outlet property="audioPositionSlider" destination="yrA-bH-Pr0" id="7Fm-Zb-Umy"/>
+                        <outlet property="currentSongLabel" destination="1G4-eC-80r" id="7Ld-4s-SuH"/>
                         <outlet property="volumeSlider" destination="BQF-Sk-9ap" id="qh5-LA-3U8"/>
                     </connections>
                 </viewController>
@@ -193,16 +202,16 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3yg-7C-glx">
-                                                            <rect key="frame" x="16" y="32.5" width="180" height="61"/>
+                                                            <rect key="frame" x="16" y="35" width="164.5" height="56"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stairway to heaven" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Gjm-6S-7Yu">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="26.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="164.5" height="24"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2r2-Rt-orE">
-                                                                    <rect key="frame" x="0.0" y="34.5" width="39.5" height="26.5"/>
+                                                                    <rect key="frame" x="0.0" y="32" width="39.5" height="24"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                     <color key="textColor" red="0.99686771630000004" green="0.63680320980000005" blue="0.54899358750000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <nil key="highlightedColor"/>
@@ -243,7 +252,11 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="fAs-US-ewe"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My Music" id="neF-Bv-PEN"/>
+                    <navigationItem key="navigationItem" title="My Music" id="neF-Bv-PEN">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="jHP-vD-lvk">
+                            <color key="tintColor" red="0.91831803320000005" green="0.48368692400000002" blue="0.41565781829999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="songListTableView" destination="og4-TX-YV4" id="3So-nN-ReG"/>
                     </connections>
