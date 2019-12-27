@@ -1,14 +1,11 @@
 import UIKit
 import AVFoundation
 
+// Global AVAudioPlayer instance.
+var audioPlayer: AVAudioPlayer?
+
 class SongListViewController: UIViewController {
 
-    // IBOutlet references.
-    @IBOutlet weak var songListTableView: UITableView!
-    
-    // AVAudioPlayer instance.
-    var audioPlayer: AVAudioPlayer?
-    
     // Song holder.
     private var songs = [SongDataModel]() {
         didSet {
@@ -16,21 +13,18 @@ class SongListViewController: UIViewController {
         }
     }
     
+    // IBOutlet references.
+    @IBOutlet weak var songListTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         let controllerHelper = SongListViewControllerHelper()
         songs = controllerHelper.getSongDataModels()
-        
-//        for song in songs {
-//            print(song.songName)
-//            print(song.songExtension)
-//            print(song.songUrl)
-//        }
     }
-    
 
+    
     /*
     // MARK: - Navigation
 
@@ -74,7 +68,6 @@ extension SongListViewController: UITableViewDelegate, UITableViewDataSource {
                 audioPlayer.prepareToPlay()
                 audioPlayer.play()
             }
-            
         } catch {
             print(error)
         }

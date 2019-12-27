@@ -7,34 +7,25 @@ class MusicPlayerViewController: UIViewController {
     @IBOutlet weak var audioPositionSlider: UISlider!
     @IBOutlet weak var volumeSlider: UISlider!
     
-    // Global audio player instance.
-    var audioPlayer: AVAudioPlayer?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        //configureMusicPlayer()
-        
+        configureMusicPlayer()
     }
     
     func configureMusicPlayer() {
         /* Called to set the song to the audio player and
            create an audio session in order for the audio
            player to play the song. */
-        let filePathUrl = Bundle.main.url(forResource: "Nemesis - Kobe (Official)", withExtension: "mp3")
-        
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: filePathUrl!)
-            if let audioPlayer = audioPlayer {
-                audioPositionSlider.maximumValue = Float(audioPlayer.duration)
-                volumeSlider.value = AVAudioSession.sharedInstance().outputVolume
-                audioPlayer.prepareToPlay()
-            } else {
-                print("Error playing current audio!")
-            }
-        } catch {
-            print(error)
+        if let audioPlayer = audioPlayer {
+            // Handle real time slider update.
+            audioPositionSlider.maximumValue = Float(audioPlayer.duration)
+            volumeSlider.value = AVAudioSession.sharedInstance().outputVolume
+            audioPlayer.prepareToPlay()
+            let _ = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updatePositionSlider), userInfo: nil, repeats: true)
+        } else {
+            print("Error playing current audio!")
         }
     }
     
@@ -80,9 +71,6 @@ class MusicPlayerViewController: UIViewController {
         if let audioPlayer = audioPlayer {
             if !audioPlayer.isPlaying {
                 audioPlayer.play()
-                
-                // Handle real time slider update.
-                let _ = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updatePositionSlider), userInfo: nil, repeats: true)
             } else {
                 audioPlayer.pause()
             }

@@ -33,8 +33,8 @@
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ah0-sp-lmo">
                                                                 <rect key="frame" x="0.0" y="0.0" width="62" height="53"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                                <state key="normal" title="Prev">
+                                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                                <state key="normal" title="&lt;&lt;">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
@@ -53,8 +53,8 @@
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i83-ED-y6i">
                                                                 <rect key="frame" x="200" y="0.0" width="62" height="53"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                                <state key="normal" title="Next">
+                                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                                <state key="normal" title="&gt;&gt;">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
