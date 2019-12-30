@@ -255,7 +255,13 @@
                         <viewLayoutGuide key="safeArea" id="fAs-US-ewe"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Music" id="neF-Bv-PEN">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="jHP-vD-lvk">
+                        <barButtonItem key="leftBarButtonItem" title="Dropbox" id="ciY-cI-DWy">
+                            <color key="tintColor" red="0.922206521" green="0.47977530959999998" blue="0.41173571349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="dropboxButtonDidTap:" destination="LSc-ON-zxC" id="3kE-F4-VwK"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="jHP-vD-lvk">
                             <color key="tintColor" red="0.91831803320000005" green="0.48368692400000002" blue="0.41565781829999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="addMusicFromDropboxTapped:" destination="LSc-ON-zxC" id="Q4z-uQ-T2W"/>
@@ -321,6 +327,7 @@
         <image name="backward.end.fill" catalog="system" width="64" height="50"/>
         <image name="forward.end.fill" catalog="system" width="64" height="50"/>
         <image name="playpause.fill" catalog="system" width="64" height="36"/>
+        <image name="plus" catalog="system" width="64" height="56"/>
         <image name="repeat" catalog="system" width="64" height="48"/>
         <image name="shuffle" catalog="system" width="64" height="46"/>
     </resources>

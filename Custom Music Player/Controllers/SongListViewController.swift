@@ -39,12 +39,14 @@ class SongListViewController: UIViewController {
     }
     
     @IBAction func addMusicFromDropboxTapped(_ sender: UIBarButtonItem) {
-        /* Called when the add music button gets tapped.
+    }
+    
+    @IBAction func dropboxButtonDidTap(_ sender: UIBarButtonItem) {
+        /* Called when the dropbox button gets tapped.
            This initiates the flow for the dropbox authentication and download. */
         let requestHandler = DropboxHandler.shared
         requestHandler.startAuthorisation(controller: self)
     }
-    
     
     /*
     // MARK: - Navigation
@@ -75,7 +77,7 @@ extension SongListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        // Calback to set height of UITableViewCell.
+        // Callback to set height of UITableViewCell.
         return tableView.frame.height * 0.1
     }
     
