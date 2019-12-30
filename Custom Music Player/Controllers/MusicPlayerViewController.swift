@@ -1,5 +1,6 @@
 import UIKit
 import AVFoundation
+import MediaPlayer
 
 // This class accounts for the Music player view.
 class MusicPlayerViewController: UIViewController {
@@ -15,6 +16,7 @@ class MusicPlayerViewController: UIViewController {
         // Do any additional setup after loading the view.
         configureMusicPlayer()
         print(currentSongIndex)
+        
     }
     
     func configureMusicPlayer() {

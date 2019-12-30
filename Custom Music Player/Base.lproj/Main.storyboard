@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tsq-bH-hT9">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,32 +28,33 @@
                                                 <rect key="frame" x="0.0" y="381.5" width="398" height="373.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="RH3-Ca-sEF">
-                                                        <rect key="frame" x="68" y="160.5" width="262" height="53"/>
+                                                        <rect key="frame" x="119" y="166.5" width="160" height="41"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ah0-sp-lmo">
-                                                                <rect key="frame" x="0.0" y="0.0" width="62" height="53"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                                <state key="normal" title="&lt;&lt;">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ah0-sp-lmo">
+                                                                <rect key="frame" x="0.0" y="0.0" width="28" height="41"/>
+                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <state key="normal" image="backward.end.fill" catalog="system">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="previousTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5tx-2F-13B"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VaU-to-VlP">
-                                                                <rect key="frame" x="100" y="0.0" width="62" height="53"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VaU-to-VlP">
+                                                                <rect key="frame" x="66" y="0.0" width="28" height="41"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                                                <state key="normal" title="Play">
+                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <state key="normal" image="playpause.fill" catalog="system">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="playPauseTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u3Q-Wt-rjq"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i83-ED-y6i">
-                                                                <rect key="frame" x="200" y="0.0" width="62" height="53"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                                <state key="normal" title="&gt;&gt;">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i83-ED-y6i">
+                                                                <rect key="frame" x="132" y="0.0" width="28" height="41"/>
+                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <state key="normal" image="forward.end.fill" catalog="system">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
@@ -64,19 +64,19 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="i64-B2-Iok">
-                                                        <rect key="frame" x="120.5" y="331.5" width="157" height="34"/>
+                                                        <rect key="frame" x="155" y="343.5" width="88.5" height="22"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngK-xe-KGH">
-                                                                <rect key="frame" x="0.0" y="0.0" width="57" height="34"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                                <state key="normal" title="Repeat">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngK-xe-KGH">
+                                                                <rect key="frame" x="0.0" y="0.0" width="22.5" height="22"/>
+                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <state key="normal" image="repeat" catalog="system">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLa-UL-TX3">
-                                                                <rect key="frame" x="99" y="0.0" width="58" height="34"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                                <state key="normal" title="Shuffle">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLa-UL-TX3">
+                                                                <rect key="frame" x="64.5" y="0.0" width="24" height="22"/>
+                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <state key="normal" image="shuffle" catalog="system">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                             </button>
@@ -84,10 +84,11 @@
                                                         <color key="tintColor" red="0.94333755969999999" green="0.50005767840000004" blue="0.21115742609999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcn-xr-QhN">
-                                                        <rect key="frame" x="20" y="40" width="358" height="80.5"/>
+                                                        <rect key="frame" x="20" y="40" width="358" height="86.5"/>
                                                         <subviews>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yrA-bH-Pr0">
-                                                                <rect key="frame" x="6" y="25" width="346" height="31"/>
+                                                                <rect key="frame" x="6" y="28" width="346" height="31"/>
+                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <connections>
                                                                     <action selector="audioPositionSliderDragged:" destination="BYZ-38-t0r" eventType="valueChanged" id="9rR-6r-0IR"/>
                                                                 </connections>
@@ -106,13 +107,14 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="BQF-Sk-9ap">
-                                                        <rect key="frame" x="66" y="293.5" width="266" height="31"/>
+                                                        <rect key="frame" x="66" y="305.5" width="266" height="31"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <connections>
                                                             <action selector="volumeSliderDragged:" destination="BYZ-38-t0r" eventType="valueChanged" id="nIu-CQ-LZo"/>
                                                         </connections>
                                                     </slider>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current song" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1G4-eC-80r">
-                                                        <rect key="frame" x="143.5" y="262" width="111.5" height="23"/>
+                                                        <rect key="frame" x="143.5" y="274" width="111.5" height="23"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                         <color key="textColor" red="0.65317274410000004" green="0.34609430070000002" blue="0.33029665470000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
@@ -255,6 +257,9 @@
                     <navigationItem key="navigationItem" title="My Music" id="neF-Bv-PEN">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="jHP-vD-lvk">
                             <color key="tintColor" red="0.91831803320000005" green="0.48368692400000002" blue="0.41565781829999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="addMusicFromDropboxTapped:" destination="LSc-ON-zxC" id="Q4z-uQ-T2W"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -312,4 +317,11 @@
             <point key="canvasLocation" x="813" y="759"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backward.end.fill" catalog="system" width="64" height="50"/>
+        <image name="forward.end.fill" catalog="system" width="64" height="50"/>
+        <image name="playpause.fill" catalog="system" width="64" height="36"/>
+        <image name="repeat" catalog="system" width="64" height="48"/>
+        <image name="shuffle" catalog="system" width="64" height="46"/>
+    </resources>
 </document>

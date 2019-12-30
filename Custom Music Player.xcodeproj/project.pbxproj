@@ -12,6 +12,7 @@
 		181823CE23B4AF2000102AF6 /* SongDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181823CD23B4AF2000102AF6 /* SongDataModel.swift */; };
 		1851D02123B1DAE100D6FEDD /* Nemesis - Kobe (Official).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1851D02023B1DAE100D6FEDD /* Nemesis - Kobe (Official).mp3 */; };
 		1858D46E23B607E200938481 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858D46D23B607E200938481 /* GlobalVariables.swift */; };
+		186E8D0123B9A6FE006CC685 /* DropboxHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E8D0023B9A6FE006CC685 /* DropboxHandler.swift */; };
 		187CEB6823B462BE00A5E1B4 /* SongListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187CEB6723B462BE00A5E1B4 /* SongListViewController.swift */; };
 		187CEB6C23B4636900A5E1B4 /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187CEB6B23B4636900A5E1B4 /* SongTableViewCell.swift */; };
 		187CEB6E23B47E9200A5E1B4 /* SongListViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187CEB6D23B47E9200A5E1B4 /* SongListViewControllerHelper.swift */; };
@@ -31,6 +32,7 @@
 		1851D01723B1CD5B00D6FEDD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1851D02023B1DAE100D6FEDD /* Nemesis - Kobe (Official).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Nemesis - Kobe (Official).mp3"; sourceTree = "<group>"; };
 		1858D46D23B607E200938481 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
+		186E8D0023B9A6FE006CC685 /* DropboxHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropboxHandler.swift; sourceTree = "<group>"; };
 		187CEB6723B462BE00A5E1B4 /* SongListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListViewController.swift; sourceTree = "<group>"; };
 		187CEB6B23B4636900A5E1B4 /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
 		187CEB6D23B47E9200A5E1B4 /* SongListViewControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListViewControllerHelper.swift; sourceTree = "<group>"; };
@@ -86,6 +88,14 @@
 			path = "Global variables";
 			sourceTree = "<group>";
 		};
+		186E8CFF23B9A698006CC685 /* Other handlers */ = {
+			isa = PBXGroup;
+			children = (
+				186E8D0023B9A6FE006CC685 /* DropboxHandler.swift */,
+			);
+			path = "Other handlers";
+			sourceTree = "<group>";
+		};
 		18A5E61E23B0BE3500D33692 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +117,7 @@
 		18A5E62923B0BE3500D33692 /* Custom Music Player */ = {
 			isa = PBXGroup;
 			children = (
+				186E8CFF23B9A698006CC685 /* Other handlers */,
 				1858D46C23B607C300938481 /* Global variables */,
 				1851D01F23B1DAC700D6FEDD /* Sounds */,
 				18A5E64123B0CE8100D33692 /* Model */,
@@ -284,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18A5E62F23B0BE3500D33692 /* MusicPlayerViewController.swift in Sources */,
+				186E8D0123B9A6FE006CC685 /* DropboxHandler.swift in Sources */,
 				187CEB6E23B47E9200A5E1B4 /* SongListViewControllerHelper.swift in Sources */,
 				1858D46E23B607E200938481 /* GlobalVariables.swift in Sources */,
 				181823CE23B4AF2000102AF6 /* SongDataModel.swift in Sources */,
@@ -366,7 +378,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -420,7 +432,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -437,7 +449,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Custom Music Player/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -456,7 +468,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Custom Music Player/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

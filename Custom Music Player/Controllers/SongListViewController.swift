@@ -37,7 +37,14 @@ class SongListViewController: UIViewController {
             print(error)
         }
     }
-
+    
+    @IBAction func addMusicFromDropboxTapped(_ sender: UIBarButtonItem) {
+        /* Called when the add music button gets tapped.
+           This initiates the flow for the dropbox authentication and download. */
+        let requestHandler = DropboxHandler.shared
+        requestHandler.startAuthorisation(controller: self)
+    }
+    
     
     /*
     // MARK: - Navigation
