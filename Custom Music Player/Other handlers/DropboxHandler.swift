@@ -31,4 +31,17 @@ class DropboxHandler {
             }
         }
     }
+    
+    func checkIfLoggedIn() -> Bool {
+        // Called to check whether a user is logged in.
+        if let authorisedClient = DropboxClientsManager.authorizedClient {
+            print(authorisedClient.users.getCurrentAccount())
+            return true
+        }
+        return false
+    }
+    
+    func clearAccessTokens() {
+        DropboxClientsManager.unlinkClients()
+    }
 }

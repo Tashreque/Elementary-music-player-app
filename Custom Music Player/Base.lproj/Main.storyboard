@@ -179,7 +179,7 @@
             </objects>
             <point key="canvasLocation" x="813.04347826086962" y="30.803571428571427"/>
         </scene>
-        <!--My Music-->
+        <!--Songs-->
         <scene sceneID="zuS-NQ-LUu">
             <objects>
                 <viewController id="LSc-ON-zxC" customClass="SongListViewController" customModule="Custom_Music_Player" customModuleProvider="target" sceneMemberID="viewController">
@@ -254,7 +254,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="fAs-US-ewe"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My Music" id="neF-Bv-PEN">
+                    <navigationItem key="navigationItem" title="Songs" id="neF-Bv-PEN">
                         <barButtonItem key="leftBarButtonItem" title="Dropbox" id="ciY-cI-DWy">
                             <color key="tintColor" red="0.922206521" green="0.47977530959999998" blue="0.41173571349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
@@ -269,6 +269,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="dropboxButton" destination="ciY-cI-DWy" id="IaC-ly-DLb"/>
                         <outlet property="songListTableView" destination="og4-TX-YV4" id="3So-nN-ReG"/>
                     </connections>
                 </viewController>

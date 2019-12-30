@@ -6,6 +6,7 @@ class SongListViewController: UIViewController {
     
     // IBOutlet references.
     @IBOutlet weak var songListTableView: UITableView!
+    @IBOutlet weak var dropboxButton: UIBarButtonItem!
     
     // Song holder.
     private var songs = [SongDataModel]() {
@@ -23,6 +24,12 @@ class SongListViewController: UIViewController {
         songs = controllerHelper.getSongDataModels()
         
         initializeAudioPlayer()
+        
+        // Set dropbox button status.
+        let loggedIn = DropboxHandler.shared.checkIfLoggedIn()
+        if loggedIn {
+            dropboxButton.title = "Unlink"
+        }
     }
     
     func initializeAudioPlayer() {
@@ -39,13 +46,45 @@ class SongListViewController: UIViewController {
     }
     
     @IBAction func addMusicFromDropboxTapped(_ sender: UIBarButtonItem) {
+        /* Called to add new songs from dropbox upon
+           authentication. */
+        let loggedIn = DropboxHandler.shared.checkIfLoggedIn()
+        print()
+        if !loggedIn {
+            print("Not linked! Show an alert.")
+            
+            let notLinkedAlert = UIAlertController(title: "Connect to Dropbox?", message: "Downloading songs to the library requires connection to dropbox.", preferredStyle: .actionSheet)
+            notLinkedAlert.addAction(UIAlertAction(title: "Connect", style: .default, handler: { (action) in
+                // Log in action.
+                DropboxHandler.shared.startAuthorisation(controller: self)
+                self.dropboxButton.title = "Unlink"
+                
+                notLinkedAlert.dismiss(animated: true, completion: nil)
+                
+            }))
+            notLinkedAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+                // Cancelation action.
+                notLinkedAlert.dismiss(animated: true, completion: nil)
+            }))
+            
+            self.present(notLinkedAlert, animated: true, completion: nil)
+            
+        } else {
+            print("Logged in, songs can be added.")
+        }
     }
     
     @IBAction func dropboxButtonDidTap(_ sender: UIBarButtonItem) {
         /* Called when the dropbox button gets tapped.
            This initiates the flow for the dropbox authentication and download. */
-        let requestHandler = DropboxHandler.shared
-        requestHandler.startAuthorisation(controller: self)
+        let loggedIn = DropboxHandler.shared.checkIfLoggedIn()
+        if loggedIn {
+            DropboxHandler.shared.clearAccessTokens()
+            sender.title = "Dropbox"
+        } else {
+            DropboxHandler.shared.startAuthorisation(controller: self)
+            sender.title = "Unlink"
+        }
     }
     
     /*
