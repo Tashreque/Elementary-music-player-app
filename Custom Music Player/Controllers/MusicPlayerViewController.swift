@@ -20,9 +20,7 @@ class MusicPlayerViewController: UIViewController {
     }
     
     func configureMusicPlayer() {
-        /* Called to set the song to the audio player and
-           create an audio session in order for the audio
-           player to play the song. */
+        // Called to set the song to the audio player and create an audio session in order for the audio player to play the song.
         if let audioPlayer = audioPlayer {
             // Handle real time slider update.
             audioPositionSlider.maximumValue = Float(audioPlayer.duration)
@@ -55,8 +53,7 @@ class MusicPlayerViewController: UIViewController {
     }
     
     @objc func updatePositionSlider() {
-        /* Called after a certain time interval to update the
-           slider in real time. */
+        // Called after a certain time interval to update the slider in real time.
         if let audioPlayer = audioPlayer {
             audioPositionSlider.value = Float(audioPlayer.currentTime)
         } else {

@@ -32,6 +32,26 @@ class DropboxHandler {
         }
     }
     
+    func listContentsWithin() {
+        // Called to display songs within a certain directory in the user's dropbox account.
+        let client = DropboxClientsManager.authorizedClient
+        if let client = client {
+            let files = client.files.listFolder(path: "/home/Saves", recursive: true, includeMediaInfo: true)
+            files.response { (listFolderResult, error) in
+                if let result = listFolderResult {
+                    let entries = result.entries
+                    DispatchQueue.main.async {
+                        print("Count = \(entries.count)")
+                        for entry in entries {
+                            print(entry.name)
+                        }
+                    }
+                }
+            }
+            print(files)
+        }
+    }
+    
     func checkIfLoggedIn() -> Bool {
         // Called to check whether a user is logged in.
         if let authorisedClient = DropboxClientsManager.authorizedClient {
@@ -42,6 +62,7 @@ class DropboxHandler {
     }
     
     func clearAccessTokens() {
+        // Clear access tokens and unlink user account from dropbox.
         DropboxClientsManager.unlinkClients()
     }
 }

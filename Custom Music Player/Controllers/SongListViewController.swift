@@ -33,6 +33,7 @@ class SongListViewController: UIViewController {
     }
     
     func initializeAudioPlayer() {
+        // Called to initialize the audio player by setting up the starting song and loading it in the music player.
         let filePathUrl = songs[currentSongIndex].songUrl
         
         do {
@@ -46,9 +47,9 @@ class SongListViewController: UIViewController {
     }
     
     @IBAction func addMusicFromDropboxTapped(_ sender: UIBarButtonItem) {
-        /* Called to add new songs from dropbox upon
-           authentication. */
-        let loggedIn = DropboxHandler.shared.checkIfLoggedIn()
+        // Called to add new songs from dropbox upon authentication.
+        let handler = DropboxHandler.shared
+        let loggedIn = handler.checkIfLoggedIn()
         print()
         if !loggedIn {
             print("Not linked! Show an alert.")
@@ -56,7 +57,7 @@ class SongListViewController: UIViewController {
             let notLinkedAlert = UIAlertController(title: "Connect to Dropbox?", message: "Downloading songs to the library requires connection to dropbox.", preferredStyle: .actionSheet)
             notLinkedAlert.addAction(UIAlertAction(title: "Connect", style: .default, handler: { (action) in
                 // Log in action.
-                DropboxHandler.shared.startAuthorisation(controller: self)
+                handler.startAuthorisation(controller: self)
                 self.dropboxButton.title = "Unlink"
                 
                 notLinkedAlert.dismiss(animated: true, completion: nil)
@@ -70,13 +71,13 @@ class SongListViewController: UIViewController {
             self.present(notLinkedAlert, animated: true, completion: nil)
             
         } else {
+            handler.listContentsWithin()
             print("Logged in, songs can be added.")
         }
     }
     
     @IBAction func dropboxButtonDidTap(_ sender: UIBarButtonItem) {
-        /* Called when the dropbox button gets tapped.
-           This initiates the flow for the dropbox authentication and download. */
+        // Called when the dropbox button gets tapped. This initiates the flow for the dropbox authentication and download.
         let loggedIn = DropboxHandler.shared.checkIfLoggedIn()
         if loggedIn {
             DropboxHandler.shared.clearAccessTokens()
@@ -134,8 +135,7 @@ extension SongListViewController: UITableViewDelegate, UITableViewDataSource {
             print(error)
         }
         
-        /* Make the music player view controller aware of
-           the current song index. */
+        // Make the music player view controller aware of the current song index.
         currentSongIndex = indexPath.row
     }
     
